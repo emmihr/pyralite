@@ -1,4 +1,4 @@
-window.elemByID = function elembyid(idinput) {
+window.elemById = function elembyid(idinput) {
   if (document.getElementById(idinput)) {
     return document.getElementById(idinput);
   } else {
@@ -38,7 +38,7 @@ window.elemsByClass = function elemsbyclass(sel) {
   }
 };
 
-HTMLElement.prototype.innerhtml = function innerHTML(text) {
+HTMLElement.prototype.innerHtml = function innerHTML(text) {
  if (text) {
    this.innerHTML = text.toString();
    return this.innerHTML;
@@ -47,7 +47,7 @@ HTMLElement.prototype.innerhtml = function innerHTML(text) {
  }
 };
 
-HTMLElement.prototype.outerhtml = function outerHTML(text) {
+HTMLElement.prototype.outerHtml = function outerHTML(text) {
  if (text) {
    this.outerHTML = text.toString();
    return this.outerHTML;
@@ -65,7 +65,7 @@ HTMLElement.prototype.text = function text(text) {
  }
 };
 
-window.newelement = function newelement(tag,content) {
+window.newElement = function newelement(tag,content) {
   if (tag) {
     let internalElement = document.createElement(tag);
     if (content) {
@@ -79,13 +79,20 @@ HTMLElement.prototype.defocus = function defocus() {
   return this.blur();
 };
 
-HTMLElement.prototype.setfocus = function setfocus(boolean) {
+HTMLElement.prototype.setFocus = function setfocus(boolean) {
   if (typeof boolean != 'boolean') {
-    throw new TypeError('boolean is of type ' + typeof boolean + ', should be boolean')
+    throw new TypeError('boolean is of type ' + typeof boolean + ', should be boolean');
   }
   if (boolean) {
     this.focus();
   } else if (!boolean) {
     this.blur();
   }
+};
+
+HTMLElement.prototype.setStyle = function setstyle(sty, value) {
+    if (typeof sty != 'string' | typeof value != 'string') {
+    throw new TypeError('both arguments should be of type string');
+    }
+  this.style[sty] = value;
 };
