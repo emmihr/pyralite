@@ -45,6 +45,8 @@ Functional way of using innerHTML. Same as `text();` and `outerhtml();`. Returns
 `element.setfocus(boolean);`
 Set focus of an element with a `true` or `false`. Good for toggling focus on an element with a piece of code such as `focus = !focus`.
 
+`element.setstyle(style, `
+
 #### Array
 `array.first();`
 Returns the first element of an array, same as `array[0]`.
