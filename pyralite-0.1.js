@@ -15,7 +15,8 @@ Array.prototype.last = function last() {
 };
 
 Number.prototype.round = function(places) {
-  return +(Math.round(this + "e+" + places)  + "e-" + places);
+  var fullplaces = places | 2
+  return +(Math.round(this + "e+" + fullplaces)  + "e-" + fullplaces);
 };
 
 window.elemsByTag = function elemsbytag(sel) {
