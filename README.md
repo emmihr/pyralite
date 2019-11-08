@@ -1,5 +1,5 @@
 # pyralite
-Quick JavaScript addon to shorthand some web development stuff.
+Quick JavaScript addon to shorthand some web development stuff. This branch is prone to having errors and weird behaviors.
 
 ## Usage
 ```html
