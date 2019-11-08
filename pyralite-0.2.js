@@ -15,7 +15,10 @@ Array.prototype.last = function last() {
 };
 
 Number.prototype.round = function(places) {
-  var fullplaces = places | 2
+  if (typeof places != "number" && typeof places != "undefined" ) {
+    throw new TypeError('places is of type ' + typeof places + ', should be number');
+  }
+  var fullplaces = places | 2;
   return +(Math.round(this + "e+" + fullplaces)  + "e-" + fullplaces);
 };
 
@@ -77,6 +80,9 @@ HTMLElement.prototype.defocus = function defocus() {
 };
 
 HTMLElement.prototype.setfocus = function setfocus(boolean) {
+  if (typeof boolean != 'boolean') {
+    throw new TypeError('boolean is of type ' + typeof boolean + ', should be boolean')
+  }
   if (boolean) {
     this.focus();
   } else if (!boolean) {
