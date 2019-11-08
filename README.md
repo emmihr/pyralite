@@ -22,7 +22,7 @@ Returns an array of HTML elements with the tag `tag`, if any.
 Returns an array of HTML elements with the class `class`, if any.
 
 `newelement(tag, content);`
-Creates a new element of type `tag`, with innerHTML = `content`. Good for programatically creating elements.
+Creates a new element of type `tag`, with innerHTML = `content`, and returns it. Good for programatically creating elements.
 
 ### Prototype extensions
 These are extended from prototypes, and are therefore functions available to the type listed.
