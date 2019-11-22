@@ -14,14 +14,14 @@ x.x corresponds to the version number, such as 0.1.
 ### Globals
 These are part of the window object, and therefore can be called directly.
 
-`elemByID(id);`
+`elemById(id);`
 Returns the HTML element with the id `id`, if any.
 
 `elemsByTag(tag);`
-Returns an array of HTML elements with the tag `tag`, if any.
+Returns an Array of HTML elements with the tag `tag`, if any.
 
 `elemsByClass(class);`
-Returns an array of HTML elements with the class `class`, if any.
+Returns an Array of HTML elements with the class `class`, if any.
 
 `newelement(tag, content);`
 Creates a new element of type `tag`, with innerHTML = `content`, and returns it. Good for programatically creating elements.
@@ -31,21 +31,21 @@ These are extended from prototypes, and are therefore functions available to the
 
 #### HTMLElement
 `element.defocus();`
-More memorable/intuitive name for `element.blur();` which takes focus from an element.
+More memorable/intuitive name for `element.blur();` which removes focus from an element.
 
 `element.text(string);`
 A functional way of using innerText. Returns the element's inner text if no `string` is provided, otherwise sets and returns the inner text.
 
-`element.outerhtml(html);`
+`element.outerHtml(html);`
 A functional way of using outerHTML. Same idea as `text();`. Returns the outerHTML value, or sets it if the `html` argument is provided.
 
-`element.innerhtml(html);`
+`element.innerHtml(html);`
 Functional way of using innerHTML. Same as `text();` and `outerhtml();`. Returns the innerHTML value, or sets it if the `html` argument is provided.
 
-`element.setfocus(boolean);`
+`element.setFocus(boolean);`
 Set focus of an element with a `true` or `false`. Good for toggling focus on an element with a piece of code such as `focus = !focus`.
 
-`element.setstyle(style, value);`
+`element.setStyle(style, value);`
 Set CSS attribute `style` of `element` to `value.` Good for programmatically editing css.
 
 #### Array
