@@ -2,7 +2,7 @@
 Quick JavaScript addon to shorthand some web development stuff. <br>
 There's a GitHub webhook in this server, which gives me a good reason to post an invite to it here:
 https://discord.gg/ek9Sdhm <br>
-Tested on Chrome 75
+Tested on Chrome 75, 76, 77, 78
 ## Usage
 ```html
 <script src='pyralite-x.x .js'></script>
