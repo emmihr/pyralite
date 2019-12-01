@@ -6,6 +6,16 @@ window.elemById = function elembyid(idinput) {
   }
 };
 
+Math.gcd = function gcd(a,b){
+  return b ? gcd(b, a%b) : a;
+};
+
+Math.reduce = function reduce(numerator,denominator){
+  if (isNaN(numerator) || isNaN(denominator)) return NaN;
+  gcd = Math.gcd(numerator,denominator);
+  return [numerator/gcd, denominator/gcd];
+}
+
 Array.prototype.shuffle = function shuffle() {
   var currentIndex = this.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) {
