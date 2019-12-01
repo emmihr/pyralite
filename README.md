@@ -26,6 +26,15 @@ Returns an Array of HTML elements with the class `class`, if any.
 `newelement(tag, content);`
 Creates a new element of type `tag`, with innerHTML = `content`, and returns it. Good for programatically creating elements.
 
+### Added to existing objects
+#### Math
+
+`Math.gcd(num1, num2)`
+Gets the greatest common divisor of `num1` and `num2`.
+
+`Math.reduce(numerator, denominator)`
+Reduces a fraction using `Math.gcd()`.
+
 ### Prototype extensions
 These are extended from prototypes, and are therefore functions available to the type listed.
 
