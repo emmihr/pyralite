@@ -55,6 +55,9 @@ Returns the first element of an array, same as `array[0]`.
 `array.last();`
 Returns the last element of an array, same as `array[array.length - 1]`.
 
+`array.shuffle();`
+Randomly shuffles an array.
+
 #### Number
 `number.round(places);`
 Not to be confused with `Math.round();`.
