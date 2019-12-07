@@ -10,7 +10,7 @@ Math.reduce = function reduce(numerator,denominator){
   if (isNaN(numerator) || isNaN(denominator)) return NaN;
   gcd = Math.gcd(numerator,denominator);
   return [numerator/gcd, denominator/gcd];
-}
+};
 
 Array.prototype.shuffle = function shuffle() {
   var currentIndex = this.length, temporaryValue, randomIndex;
@@ -22,7 +22,7 @@ Array.prototype.shuffle = function shuffle() {
     this[randomIndex] = temporaryValue;
   }
   return this;
-}
+};
 
 Array.prototype.first = function first() {
   return this[0];
@@ -52,19 +52,19 @@ HTMLElement.prototype.innerHtml = function innerHTML(text) {
  if (text) {
    this.innerHTML = text.toString() || this.innerHTML;
    return this.innerHTML;
-};
+}};
 
 HTMLElement.prototype.outerHtml = function outerHTML(text) {
  if (text) {
    this.outerHTML = text.toString() || this.outerHTML;
    return this.outerHTML;
-};
+}};
 
 HTMLElement.prototype.text = function text(text) {
  if (text) {
    this.innerText = text.toString() || this.innerText;
    return this.innerText;
-};
+}};
 
 window.newElement = function newelement(tag,content) {
   if (tag) {
