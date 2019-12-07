@@ -1,10 +1,13 @@
 Windows:
 Windows 10: Microsoft Edge 44
-Windows 10: Chrome 77 (Stable)
+Windows 10: Chrome 78 (Stable)
 
-Mac:
+OSX / iOS:
 
 Linux:
+Android 9.0: Chrome 80 (Canary)
+Android 8.1: Chrome 79 (Beta)
+Android 7.0: Chrome 78 (Stable)
 
 Other:
-Chrome OS: Chrome 75 (Stable)
+Chrome OS 75 Dev Channel: Chrome 75 (Stable)
