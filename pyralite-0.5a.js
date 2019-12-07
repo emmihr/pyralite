@@ -1,9 +1,5 @@
 window.elemById = function elembyid(idinput) {
-  if (document.getElementById(idinput)) {
-    return document.getElementById(idinput);
-  } else {
-    return;
-  }
+    return document.getElementById(idinput) || undefined;
 };
 
 Math.gcd = function gcd(a,b){
@@ -45,46 +41,29 @@ Number.prototype.round = function(places) {
 };
 
 window.elemsByTag = function elemsbytag(sel) {
-  if (document.querySelectorAll(sel)) {
-    return [].slice.call(document.querySelectorAll(sel));
-  } else {
-    return;
-  }
+    return [].slice.call(document.querySelectorAll(sel)) || undefined;
 };
 
 window.elemsByClass = function elemsbyclass(sel) {
-  if (document.querySelectorAll('.'+sel)) {
-    return [].slice.call(document.querySelectorAll('.'+sel));
-  } else {
-    return;
-  }
+    return [].slice.call(document.querySelectorAll('.'+sel)) || undefined;
 };
 
 HTMLElement.prototype.innerHtml = function innerHTML(text) {
  if (text) {
-   this.innerHTML = text.toString();
+   this.innerHTML = text.toString() || this.innerHTML;
    return this.innerHTML;
- } else {
-   return this.innerHTML;
- }
 };
 
 HTMLElement.prototype.outerHtml = function outerHTML(text) {
  if (text) {
-   this.outerHTML = text.toString();
+   this.outerHTML = text.toString() || this.outerHTML;
    return this.outerHTML;
- } else {
-   return this.outerHTML;
- }
 };
 
 HTMLElement.prototype.text = function text(text) {
  if (text) {
-   this.innerText = text.toString();
+   this.innerText = text.toString() || this.innerText;
    return this.innerText;
- } else {
-   return this.innerText;
- }
 };
 
 window.newElement = function newelement(tag,content) {
@@ -107,13 +86,14 @@ HTMLElement.prototype.setFocus = function setfocus(boolean) {
   }
   if (boolean) {
     this.focus();
-  } else if (!boolean) {
+  }
+  if (!boolean) {
     this.blur();
   }
 };
 
 HTMLElement.prototype.setStyle = function setstyle(sty, value) {
-    if (typeof sty != 'string' | typeof value != 'string') {
+    if (typeof sty != 'string' || typeof value != 'string') {
     throw new TypeError('both arguments should be of type string');
     }
   this.style[sty] = value;
