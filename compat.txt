@@ -1,8 +1,10 @@
 Windows:
+Windows 10: Microsoft Edge 44
+Windows 10: Chrome 77 (Stable)
 
 Mac:
 
 Linux:
 
 Other:
-Chrome OS: Chrome 75, 76, 77 (Stable)
+Chrome OS: Chrome 75 (Stable)
