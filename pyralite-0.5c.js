@@ -1,16 +1,16 @@
 window.elemById = function elembyid(idinput) {
     return document.getElementById(idinput) || undefined;
-};
+}; 
 
 Math.gcd = function gcd(a,b){
   return b ? gcd(b, a%b) : a;
-};
+}; 
 
 Math.reduce = function reduce(numerator,denominator){
   if (isNaN(numerator) || isNaN(denominator)) return NaN;
   gcd = Math.gcd(numerator,denominator);
   return [numerator/gcd, denominator/gcd];
-};
+}; 
 
 Array.prototype.shuffle = function shuffle() {
   var currentIndex = this.length, temporaryValue, randomIndex;
@@ -22,7 +22,7 @@ Array.prototype.shuffle = function shuffle() {
     this[randomIndex] = temporaryValue;
   }
   return this;
-};
+}; 
 
 Array.prototype.first = function first() {
   return this[0];
@@ -38,43 +38,44 @@ Number.prototype.round = function(places) {
   }
   var fullplaces = places | 2;
   return +(Math.round(this + "e+" + fullplaces)  + "e-" + fullplaces);
-};
+}; 
 
 window.elemsByTag = function elemsbytag(sel) {
     return [].slice.call(document.querySelectorAll(sel)) || undefined;
-};
+}; 
 
 window.elemsByClass = function elemsbyclass(sel) {
     return [].slice.call(document.querySelectorAll('.'+sel)) || undefined;
-};
+}; 
 
 HTMLElement.prototype.innerHtml = function innerHTML(text) {
  if (text) {
    this.innerHTML = text.toString() || this.innerHTML;
    return this.innerHTML;
-}};
+}}; 
 
 HTMLElement.prototype.outerHtml = function outerHTML(text) {
  if (text) {
    this.outerHTML = text.toString() || this.outerHTML;
    return this.outerHTML;
-}};
+}}; 
 
 HTMLElement.prototype.text = function text(text) {
  if (text) {
    this.innerText = text.toString() || this.innerText;
    return this.innerText;
-}};
+}}; 
 
 window.newElement = function newelement(tag,content) {
+let enew;
   if (tag) {
-    let internalElement = document.createElement(tag);
+    enew = document.createElement(tag);
     if (content) {
-      internalElement.innerHTML = content;
+      enew.innerHTML = content;
     }
   }
-  return internalElement;
-};
+  return enew;
+}; 
 
 HTMLElement.prototype.defocus = function defocus() {
   return this.blur();
@@ -97,4 +98,4 @@ HTMLElement.prototype.setStyle = function setstyle(sty, value) {
     throw new TypeError('both arguments should be of type string');
     }
   this.style[sty] = value;
-};
+}; 
