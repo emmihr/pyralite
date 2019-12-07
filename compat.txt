@@ -1,0 +1,8 @@
+Windows:
+
+Mac:
+
+Linux:
+
+Other:
+Chrome OS: Chrome 75, 76, 77 (Stable)
