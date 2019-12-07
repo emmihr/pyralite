@@ -7,6 +7,8 @@ OSX / iOS:
 Linux:
 Android 9.0: Chrome 80 (Canary)
 Android 8.1: Chrome 79 (Beta)
+Android 8.1: Firefox 68
+Android 8.1: Opera 55
 Android 7.0: Chrome 78 (Stable)
 
 Other:
