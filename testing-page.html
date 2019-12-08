@@ -29,7 +29,7 @@
       ${array.shuffle()} - shuffled`)
       elemById('math').innerHtml(`${Math.gcd(56, 88)} - expected 8\n${Math.reduce(4, 8)} - expected [1, 2]`)
       
-      document.body.appendChild(newElement('p', 'Programmatically generated paragraph.'))
+      document.body.appendChild(new PyrElement({tag: 'p', content: 'Programatically generated p.'}))
     </script>
   </body>
 </html>
