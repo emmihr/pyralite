@@ -1,16 +1,16 @@
 window.elemById = function elembyid(idinput) {
-    return document.getElementById(idinput) || undefined;
-}; 
+    return document.getElementById(idinput) || null;
+};
 
 Math.gcd = function gcd(a,b){
   return b ? gcd(b, a%b) : a;
-}; 
+};
 
 Math.reduce = function reduce(numerator,denominator){
   if (isNaN(numerator) || isNaN(denominator)) return NaN;
   gcd = Math.gcd(numerator,denominator);
   return [numerator/gcd, denominator/gcd];
-}; 
+};
 
 Array.prototype.shuffle = function shuffle() {
   var currentIndex = this.length, temporaryValue, randomIndex;
@@ -22,7 +22,7 @@ Array.prototype.shuffle = function shuffle() {
     this[randomIndex] = temporaryValue;
   }
   return this;
-}; 
+};
 
 Array.prototype.first = function first() {
   return this[0];
@@ -34,48 +34,54 @@ Array.prototype.last = function last() {
 
 Number.prototype.round = function(places) {
   if (typeof places != "number" && typeof places != "undefined" ) {
-    throw new TypeError('places is of type ' + typeof places + ', should be number');
+    throw new TypeError('argument 1 should be of type number');
   }
   var fullplaces = places | 2;
   return +(Math.round(this + "e+" + fullplaces)  + "e-" + fullplaces);
-}; 
+};
 
 window.elemsByTag = function elemsbytag(sel) {
-    return [].slice.call(document.querySelectorAll(sel)) || undefined;
-}; 
+    return [].slice.call(document.querySelectorAll(sel)) || null;
+};
 
 window.elemsByClass = function elemsbyclass(sel) {
-    return [].slice.call(document.querySelectorAll('.'+sel)) || undefined;
-}; 
+    return [].slice.call(document.querySelectorAll('.'+sel)) || null;
+};
 
 HTMLElement.prototype.innerHtml = function innerHTML(text) {
  if (text) {
    this.innerHTML = text.toString() || this.innerHTML;
    return this.innerHTML;
-}}; 
+}};
 
 HTMLElement.prototype.outerHtml = function outerHTML(text) {
  if (text) {
    this.outerHTML = text.toString() || this.outerHTML;
    return this.outerHTML;
-}}; 
+}};
 
 HTMLElement.prototype.text = function text(text) {
  if (text) {
    this.innerText = text.toString() || this.innerText;
    return this.innerText;
-}}; 
+}};
 
-window.newElement = function newelement(tag,content) {
-let enew;
-  if (tag) {
-    enew = document.createElement(tag);
-    if (content) {
-      enew.innerHTML = content;
-    }
-  }
-  return enew;
-}; 
+window.PyrElement = function PyrElement(options) {
+let pyrelement;
+if (options && typeof options != 'object') {
+  throw new TypeError('argument 1 should be of type object');
+}
+if (!options.tag) {
+  throw new Error('options.tag is a required parameter.');
+}
+pyrelement = document.createElement(options.tag);
+pyrelement.text(options.content || '');
+pyrelement.id = options.id || '';
+if (options.class) {
+  pyrelement.classList.add(options.class)
+}
+return pyrelement;
+};
 
 HTMLElement.prototype.defocus = function defocus() {
   return this.blur();
@@ -83,7 +89,7 @@ HTMLElement.prototype.defocus = function defocus() {
 
 HTMLElement.prototype.setFocus = function setfocus(boolean) {
   if (typeof boolean != 'boolean') {
-    throw new TypeError('boolean is of type ' + typeof boolean + ', should be boolean');
+    throw new TypeError('argument 1 should be of type boolean');
   }
   if (boolean) {
     this.focus();
@@ -98,4 +104,4 @@ HTMLElement.prototype.setStyle = function setstyle(sty, value) {
     throw new TypeError('both arguments should be of type string');
     }
   this.style[sty] = value;
-}; 
+};
