@@ -2,7 +2,7 @@
 Quick JavaScript addon to shorthand some web development stuff. <br>
 There's a GitHub webhook in this server, which gives me a good reason to post an invite to it here:
 https://discord.gg/ek9Sdhm <br>
-See known tested & working systems in compat.txt
+See known tested & working systems in compat.txt <br>
 Open an issue if you've tested on a unique system/browser combo!
 ## Usage
 ```html
@@ -24,8 +24,12 @@ Returns an Array of HTML elements with the tag `tag`, if any.
 `elemsByClass(class);`
 Returns an Array of HTML elements with the class `class`, if any.
 
-`newelement(tag, content);`
-Creates a new element of type `tag`, with innerHTML = `content`, and returns it. Good for programatically creating elements.
+`new PyrElement(options);`
+Creates a new element with the specified options: Valid options are: <br>
+`tag` - String. Type of the element.<br>
+`content` - String. Text of the element. Can be blank.<br>
+`id` - String. ID of the element. Can be blank.<br>
+`class` - String. Class(es) of the element. Can be blank.<br>
 
 ### Added to existing objects
 #### Math
