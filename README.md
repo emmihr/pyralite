@@ -2,8 +2,7 @@
 JavaScript addon, mostly just some useful functions and readability improvements for JS <br>
 There's a GitHub webhook in this server, which gives me a good reason to post an invite to it here:
 https://discord.gg/ek9Sdhm <br>
-See known tested & working systems in compat.txt <br>
-Open an issue if you've tested on a unique system/browser combo!
+Feel free to open issues for suggestions, bugs, or questions, or open a pull request for additions.
 ## Usage
 ```html
 <script src='pyralite-x.x .js'></script>
