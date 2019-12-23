@@ -2,6 +2,10 @@ window.elemById = function elembyid(idinput) {
     return document.getElementById(idinput) || null;
 };
 
+Number.prototype.isEven = function() {
+    return !(this % 2); 
+}
+
 Math.gcd = function gcd(a,b){
   return b ? gcd(b, a%b) : a;
 };
