@@ -82,3 +82,6 @@ var x = 192.82457295
 x.round(3) // 192.825
 ```
 May act odd with negatives as well.
+
+`number.isEven();` 
+Checks if `number` is even. `true` if even, `false` if not.
