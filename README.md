@@ -1,5 +1,5 @@
 # pyralite
-Quick JavaScript addon to shorthand some web development stuff. <br>
+JavaScript addon, mostly just some useful functions and readability improvements for JS <br>
 There's a GitHub webhook in this server, which gives me a good reason to post an invite to it here:
 https://discord.gg/ek9Sdhm <br>
 See known tested & working systems in compat.txt <br>
