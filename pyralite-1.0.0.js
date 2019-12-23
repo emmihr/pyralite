@@ -4,7 +4,7 @@ window.elemById = function elembyid(idinput) {
 
 Number.prototype.isEven = function() {
     return !(this % 2); 
-}
+};
 
 Math.gcd = function gcd(a,b){
   return b ? gcd(b, a%b) : a;
@@ -40,7 +40,7 @@ Number.prototype.round = function(places) {
   if (typeof places != "number" && typeof places != "undefined" ) {
     throw new TypeError('argument 1 should be of type number');
   }
-  var fullplaces = places | 2;
+  var fullplaces = places || 2;
   return +(Math.round(this + "e+" + fullplaces)  + "e-" + fullplaces);
 };
 
@@ -82,7 +82,7 @@ pyrelement = document.createElement(options.tag);
 pyrelement.text(options.content || '');
 pyrelement.id = options.id || '';
 if (options.class) {
-  pyrelement.classList.add(options.class)
+  pyrelement.classList.add(options.class);
 }
 return pyrelement;
 };
