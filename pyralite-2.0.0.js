@@ -28,13 +28,9 @@ Array.prototype.shuffle = function shuffle() {
   return this;
 };
 
-Array.prototype.first = function first() {
-  return this[0];
-};
+Array.prototype.first = this[0];
 
-Array.prototype.last = function last() {
-  return this[this.length - 1];
-};
+Array.prototype.last = this[this.length - 1];
 
 Number.prototype.round = function(places) {
   if (typeof places != "number" && typeof places != "undefined" ) {
