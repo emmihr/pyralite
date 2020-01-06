@@ -10,7 +10,7 @@ Feel free to open issues for suggestions, bugs, or questions, or open a pull req
 You can start using Pyralite functions immediately.
 x.x corresponds to the version number, such as 0.1.
 
-## Functions
+## Features
 ### Globals
 These are part of the window object, and therefore can be called directly.
 
@@ -40,7 +40,7 @@ Gets the greatest common divisor of `num1` and `num2`.
 Reduces a fraction using `Math.gcd()`.
 
 ### Prototype extensions
-These are extended from prototypes, and are therefore functions available to the type listed.
+These are extended from prototypes, and are therefore available to the type listed.
 
 #### HTMLElement
 `element.defocus();`
@@ -62,10 +62,10 @@ Set focus of an element with a `true` or `false`. Good for toggling focus on an 
 Set CSS attribute `style` of `element` to `value.` Good for programmatically editing css.
 
 #### Array
-`array.first();`
+`array.first;`
 Returns the first element of an array, same as `array[0]`.
 
-`array.last();`
+`array.last;`
 Returns the last element of an array, same as `array[array.length - 1]`.
 
 `array.shuffle();`
