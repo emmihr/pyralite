@@ -7,7 +7,7 @@
 
 # pyralite
 JavaScript addon, mostly just some useful functions and readability improvements for JS <br>
-There's an official server for projects by me and @Litleck, here: https://discord.gg/rXVnuTB <br>
+There's an official server for projects by me and [@Litleck](https://github.com/Litleck), here: https://discord.gg/rXVnuTB <br>
 Feel free to open issues for suggestions, bugs, or questions, or open a pull request for additions.
 ## Usage
 ```html
