@@ -151,7 +151,8 @@ HTMLElement.prototype.setFocus = function setfocus(boolean) {
 /**
 * Sets a style rule of an element.
 * @augments HTMLElement
-* @arg {String}
+* @arg {String} sty - The style to set.
+* @arg {String|Number} - The value to set the style to.
 * @returns {null}
 */
 HTMLElement.prototype.setStyle = function setstyle(sty, value) {
