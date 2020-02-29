@@ -2,7 +2,7 @@
 * Alternative to document.getElementById.
 *
 * @arg {String} ID to get element from.
-* @returns {HTMLElement}
+* @returns ?{HTMLElement}
 */
 window.elemById = function elembyid(idinput) {
     return document.getElementById(idinput) || null;
@@ -30,7 +30,7 @@ Math.gcd = function gcd(a,b){
 * @augments Math
 * @arg {Number} numerator
 * @arg {Number} denominator
-* @returns {Array}
+* @returns {Array | NaN}
 */
 Math.reduce = function reduce(numerator,denominator){
   if (isNaN(numerator) || isNaN(denominator)) return NaN;
@@ -54,73 +54,93 @@ Array.prototype.shuffle = function shuffle() {
   return this;
 };
 /**
+* Return the first element of an array.
+* @augments Array
+*/
 Array.prototype.first = function first() {
   return this[0];
 };
-
+/**
+* Return the last element of an array.
+* @augments Array
+*/
 Array.prototype.last = function last() {
   return this[this.length - 1];
 };
-
-Number.prototype.round = function(places) {
-  if (typeof places != "number" && typeof places != "undefined" ) {
-    throw new TypeError('argument 1 should be of type number');
-  }
-  var fullplaces = places || 2;
-  return +(Math.round(this + "e+" + fullplaces)  + "e-" + fullplaces);
+/**
+* Round a number to some places. Not to be confused with Math.round.
+* @augments Number
+* @arg {Number} places - How many decimal places to round the number to. Default 2.
+* @returns {Number}
+*/
+Number.prototype.round = function(places=2) {
+  return +(Math.round(this + "e+" + places)  + "e-" + places);
 };
-
-window.elemsByTag = function elemsbytag(sel) {
-    return [].slice.call(document.querySelectorAll(sel)) || null;
+/**
+* Gets elements by the provided tag (e.g. "h1", "em")
+* @arg {String} tag - The tag to use.
+* @returns ?{Array<HTMLElement>}
+*/
+window.elemsByTag = function elemsbytag(tag) {
+    return [].slice.call(document.querySelectorAll(tag)) || null;
 };
-
-window.elemsByClass = function elemsbyclass(sel) {
-    return [].slice.call(document.querySelectorAll('.'+sel)) || null;
+/**
+* Gets elements by the provided class (e.g. "big", "testclasss")
+* @arg {String} class - The class to use.
+* @returns ?{Array<HTMLElement>}
+*/
+window.elemsByClass = function elemsbyclass(cls) {
+    return [].slice.call(document.querySelectorAll('.'+cls)) || null;
 };
-
+/**
+* Set the inner HTML of an element.
+* @augments HTMLElement
+* @arg {String} text - The string to set the inner HTML to.
+* @returns ?{String}
+*/
 HTMLElement.prototype.innerHtml = function innerHTML(text) {
  if (text) {
    this.innerHTML = text.toString() || this.innerHTML;
    return this.innerHTML;
 }};
-
+/**
+* Set the outer HTML of an element.
+* @augments HTMLElement
+* @arg {String} text - The string to set the outer HTML to.
+* @returns ?{String}
+*/
 HTMLElement.prototype.outerHtml = function outerHTML(text) {
  if (text) {
    this.outerHTML = text.toString() || this.outerHTML;
    return this.outerHTML;
 }};
-
+/**
+* Set the inner text of an HTML element.
+* @augments HTMLElement
+* @arg {String} text - The string to set the inner text to.
+* @returns ?{String}
+*/
 HTMLElement.prototype.text = function text(text) {
  if (text) {
    this.innerText = text.toString() || this.innerText;
    return this.innerText;
 }};
 
-window.PyrElement = function PyrElement(options) {
-let pyrelement;
-if (options && typeof options != 'object') {
-  throw new TypeError('argument 1 should be of type object');
-}
-if (!options.tag) {
-  throw new Error('options.tag is a required parameter.');
-}
-pyrelement = document.createElement(options.tag);
-pyrelement.text(options.content || '');
-pyrelement.id = options.id || '';
-if (options.class) {
-  pyrelement.classList.add(options.class);
-}
-return pyrelement;
-};
-
+/**
+* Defocus an HTML element. Alias for blur().
+* @augments HTMLElement
+* @returns {null}
+*/
 HTMLElement.prototype.defocus = function defocus() {
   return this.blur();
 };
-
+/**
+* Set the focus of an HTML element on or off. Good for toggling.
+* @augments HTMLElement
+* @arg {Boolean} boolean - Whether to focus or defocus the element.
+* @returns {null}
+*/
 HTMLElement.prototype.setFocus = function setfocus(boolean) {
-  if (typeof boolean != 'boolean') {
-    throw new TypeError('argument 1 should be of type boolean');
-  }
   if (boolean) {
     this.focus();
   }
@@ -128,10 +148,12 @@ HTMLElement.prototype.setFocus = function setfocus(boolean) {
     this.blur();
   }
 };
-
+/**
+* Sets a style rule of an element.
+* @augments HTMLElement
+* @arg {String}
+* @returns {null}
+*/
 HTMLElement.prototype.setStyle = function setstyle(sty, value) {
-    if (typeof sty != 'string' || typeof value != 'string') {
-    throw new TypeError('both arguments should be of type string');
-    }
   this.style[sty] = value;
 };
