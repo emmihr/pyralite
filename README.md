@@ -19,6 +19,6 @@ x.x corresponds to the version number, such as 0.1.
 
 ## Documentation
 https://doxdox.org/kel5isgod/pyralite
-This is a bit screwy but I'll fix it in ~~1.0.2~~ 1.0.3
+This is a bit screwy but I'll fix it in ~~1.0.2~~ ~~1.0.3~~ 1.0.4
 ## Contributing
 All issues and PRs are very welcome!
