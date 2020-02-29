@@ -1,21 +1,47 @@
+/**
+* Alternative to document.getElementById.
+*
+* @arg {String} ID to get element from.
+* @returns {HTMLElement}
+*/
 window.elemById = function elembyid(idinput) {
     return document.getElementById(idinput) || null;
 };
-
+/**
+* Check if a number is even.
+* @augments Number
+* @returns {Boolean}
+*/
 Number.prototype.isEven = function() {
     return !(this % 2); 
 };
-
+/**
+* Get the GCD (Greatest Common Denominator) of 2 numbers.
+* @augments Math
+* @arg {Number} a
+* @arg {Number} b
+* @returns {Number}
+*/
 Math.gcd = function gcd(a,b){
   return b ? gcd(b, a%b) : a;
 };
-
+/**
+* Reduce a fraction (written as a/b). Makes use of {@link Math#gcd}.
+* @augments Math
+* @arg {Number} numerator
+* @arg {Number} denominator
+* @returns {Array}
+*/
 Math.reduce = function reduce(numerator,denominator){
   if (isNaN(numerator) || isNaN(denominator)) return NaN;
-  gcd = Math.gcd(numerator,denominator);
+  let gcd = Math.gcd(numerator,denominator);
   return [numerator/gcd, denominator/gcd];
 };
-
+/**
+* Shuffle an array.
+* @augments Array
+* @returns {Array}
+*/
 Array.prototype.shuffle = function shuffle() {
   var currentIndex = this.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) {
@@ -27,7 +53,7 @@ Array.prototype.shuffle = function shuffle() {
   }
   return this;
 };
-
+/**
 Array.prototype.first = function first() {
   return this[0];
 };
