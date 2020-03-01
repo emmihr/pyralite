@@ -1,10 +1,11 @@
+pyralite = {};
 /**
 * Alternative to document.getElementById.
 *
 * @param {String} id - ID to get element from.
 * @returns {HTMLElement}
 */
-window.elemById = id => {
+pyralite.elemById = id => {
     return document.getElementById(id) || null;
 };
 /**
@@ -83,7 +84,7 @@ Number.prototype.round = (places=2) => {
 * @param {String} tag - The tag to use.
 * @returns {HTMLElement[]}
 */
-window.elemsByTag = tag => {
+pyralite.elemsByTag = tag => {
     return [].slice.call(document.querySelectorAll(tag)) || null;
 };
 /**
@@ -91,7 +92,7 @@ window.elemsByTag = tag => {
 * @param {String} class - The class to use.
 * @returns {HTMLElement[]}
 */
-window.elemsByClass = cls => {
+pyralite.elemsByClass = cls => {
     return [].slice.call(document.querySelectorAll('.'+cls)) || null;
 };
 /**
@@ -160,3 +161,4 @@ HTMLElement.prototype.setFocus = boolean => {
 HTMLElement.prototype.setStyle = (sty, value) => {
   this.style[sty] = value;
 };
+pyr = pyralite;

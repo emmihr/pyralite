@@ -18,6 +18,9 @@ x.x corresponds to the version number, such as 0.1.
 
 ## Documentation
 https://doxdox.org/kel5isgod/pyralite
-This is a bit screwy but I'll fix it in ~~1.0.2~~ ~~1.0.3~~ ~~1.0.4~~ ~~1.1.0~~ 1.1.1
+<br> It's mostly accurate
+## Notes
+Any pyralite function *n* that doesn't extend prototypes (e.g. elemById) is available as `pyralite.n`, or, alternatively, `pyr.n`.<br>
+`Pyr` should be used for most situations, as `pyralite` will contain functions made for debugging
 ## Contributing
 All issues and PRs are very welcome!
