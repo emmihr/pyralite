@@ -4,7 +4,7 @@
 * @param {String} id - ID to get element from.
 * @returns {HTMLElement}
 */
-window.elemById = function elembyid(id) {
+window.elemById = id => {
     return document.getElementById(id) || null;
 };
 /**
@@ -12,7 +12,7 @@ window.elemById = function elembyid(id) {
 * @augments Number
 * @returns {Boolean}
 */
-Number.prototype.isEven = function() {
+Number.prototype.isEven = () => {
     return !(this % 2); 
 };
 /**
@@ -22,7 +22,7 @@ Number.prototype.isEven = function() {
 * @param {Number} b
 * @returns {(Number|NaN)}
 */
-Math.gcd = function gcd(a,b){
+Math.gcd = (a,b) => {
   return b ? gcd(b, a%b) : a;
 };
 /**
@@ -32,7 +32,7 @@ Math.gcd = function gcd(a,b){
 * @param {Number} denominator
 * @returns {Number[]}
 */
-Math.reduce = function reduce(numerator,denominator){
+Math.reduce = (numerator,denominator)=>{
   if (isNaN(numerator) || isNaN(denominator)) return NaN;
   let gcd = Math.gcd(numerator,denominator);
   return [numerator/gcd, denominator/gcd];
@@ -42,7 +42,7 @@ Math.reduce = function reduce(numerator,denominator){
 * @augments Array
 * @returns {Array}
 */
-Array.prototype.shuffle = function shuffle() {
+Array.prototype.shuffle = () => {
   var currentIndex = this.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
