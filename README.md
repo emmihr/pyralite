@@ -3,7 +3,7 @@
 ![issues](https://img.shields.io/github/issues/kel5isgod/pyralite)
 ![license](https://img.shields.io/github/license/kel5isgod/pyralite)
 <br>![badges](https://img.shields.io/badge/badges%3F-check-success)
-(The shrinkwrap and package(-lock).json files are not needed. Pyralite only really works/is useful in a browser setting. These are just to keep Glitch happy.)
+(The shrinkwrap and package-lock.json files are not needed. Pyralite only really works/is useful in a browser setting. These are just to keep Glitch happy.)
 
 # pyralite
 JavaScript addon, mostly just some useful functions and readability improvements for JS <br>
