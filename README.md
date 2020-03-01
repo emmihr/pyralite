@@ -21,6 +21,6 @@ https://doxdox.org/kel5isgod/pyralite
 <br> It's mostly accurate
 ## Notes
 Any pyralite function *n* that doesn't extend prototypes (e.g. elemById) is available as `pyralite.n`, or, alternatively, `pyr.n`.<br>
-`Pyr` should be used for most situations, as `pyralite` will contain functions made for debugging
+`pyralite` should be used for most situations, as `pyr` will contain functions made for debugging
 ## Contributing
 All issues and PRs are very welcome!
