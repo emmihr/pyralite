@@ -58,7 +58,7 @@ Array.prototype.shuffle = () => {
 * @augments Array
 * @returns {*}
 */
-Array.prototype.first = function first() {
+Array.prototype.first = () => {
   return this[0];
 };
 /**
@@ -66,7 +66,7 @@ Array.prototype.first = function first() {
 * @augments Array
 * @returns {*}
 */
-Array.prototype.last = function last() {
+Array.prototype.last = () => {
   return this[this.length - 1];
 };
 /**
@@ -75,7 +75,7 @@ Array.prototype.last = function last() {
 * @param {Number} [places=2] - How many decimal places to round the number to. Default 2.
 * @returns {Number}
 */
-Number.prototype.round = function(places=2) {
+Number.prototype.round = (places=2) => {
   return +(Math.round(this + "e+" + places)  + "e-" + places);
 };
 /**
@@ -83,7 +83,7 @@ Number.prototype.round = function(places=2) {
 * @param {String} tag - The tag to use.
 * @returns {HTMLElement[]}
 */
-window.elemsByTag = function elemsbytag(tag) {
+window.elemsByTag = tag => {
     return [].slice.call(document.querySelectorAll(tag)) || null;
 };
 /**
@@ -91,7 +91,7 @@ window.elemsByTag = function elemsbytag(tag) {
 * @param {String} class - The class to use.
 * @returns {HTMLElement[]}
 */
-window.elemsByClass = function elemsbyclass(cls) {
+window.elemsByClass = cls => {
     return [].slice.call(document.querySelectorAll('.'+cls)) || null;
 };
 /**
@@ -100,7 +100,7 @@ window.elemsByClass = function elemsbyclass(cls) {
 * @param {String} text - The string to set the inner HTML to.
 * @returns {String}
 */
-HTMLElement.prototype.innerHtml = function innerHTML(text) {
+HTMLElement.prototype.innerHtml = text => {
  if (text) {
    this.innerHTML = text.toString() || this.innerHTML;
    return this.innerHTML;
@@ -111,7 +111,7 @@ HTMLElement.prototype.innerHtml = function innerHTML(text) {
 * @param {String} text - The string to set the outer HTML to.
 * @returns {String}
 */
-HTMLElement.prototype.outerHtml = function outerHTML(text) {
+HTMLElement.prototype.outerHtml = text => {
  if (text) {
    this.outerHTML = text.toString() || this.outerHTML;
    return this.outerHTML;
@@ -122,7 +122,7 @@ HTMLElement.prototype.outerHtml = function outerHTML(text) {
 * @param {String} text - The string to set the inner text to.
 * @returns {String}
 */
-HTMLElement.prototype.text = function text(text) {
+HTMLElement.prototype.text = text => {
  if (text) {
    this.innerText = text.toString() || this.innerText;
    return this.innerText;
@@ -133,7 +133,7 @@ HTMLElement.prototype.text = function text(text) {
 * @augments HTMLElement
 * @returns {undefined}
 */
-HTMLElement.prototype.defocus = function defocus() {
+HTMLElement.prototype.defocus = () => {
   return this.blur();
 };
 /**
@@ -142,7 +142,7 @@ HTMLElement.prototype.defocus = function defocus() {
 * @param {Boolean} boolean - Whether to focus or defocus the element.
 * @returns {undefined}
 */
-HTMLElement.prototype.setFocus = function setfocus(boolean) {
+HTMLElement.prototype.setFocus = boolean => {
   if (boolean) {
     this.focus();
   }
@@ -154,9 +154,9 @@ HTMLElement.prototype.setFocus = function setfocus(boolean) {
 * Sets a style rule of an element.
 * @augments HTMLElement
 * @param {String} sty - The style to set.
-* @param {String|Number} - The value to set the style to.
+* @param {(String|Number)} value - The value to set the style to.
 * @returns {undefined}
 */
-HTMLElement.prototype.setStyle = function setstyle(sty, value) {
+HTMLElement.prototype.setStyle = (sty, value) => {
   this.style[sty] = value;
 };
